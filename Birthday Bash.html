@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Countdown</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .birthdayimg {
+      background-image: url('https://cdn.pixabay.com/photo/2018/02/23/21/29/roses-frame-3176667_960_720.jpg');
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      color: red;
+      font-size: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .topleft {
+      color: yellow;
+      padding: 20px;
+    }
+
+    .bottomleft {
+      color: blue;
+      padding: 20px;
+    }
+
+    .middle {
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    #amx {
+      font-size: 60px;
+      color: #fff;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    hr {
+      margin: 20px auto;
+      width: 50%;
+      border: 1px solid white;
+    }
+
+    @media (max-width: 600px) {
+      .birthdayimg {
+        font-size: 24px;
+      }
+
+      #amx {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="birthdayimg">
+    <div class="topleft">
+      <p>May GOD Bless YOU!</p>
+    </div>
+    <div class="middle">
+      <h1>Ready for the Surprise?</h1>
+      <hr>
+      <p id="amx"></p>
+    </div>
+    <div class="bottomleft">
+      <p>Created by Sagnik</p>
+    </div>
+  </div>
+
+  <script>
+    var countDownDate = new Date("July 16, 2025 00:00:00").getTime();
+
+    var countdownfunction = setInterval(function () {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("amx").innerHTML = days + "D " + hours + "H "
+        + minutes + "M " + seconds + "S ";
+
+      if (distance < 0) {
+        clearInterval(countdownfunction);
+        document.getElementById("amx").innerHTML = "HAPPY BIRTHDAY Ma'am! ❤️";
+        
+        setTimeout(function () {
+          window.location.href = "birthday.html"; // ✅ Redirect to another HTML page in the same repo
+        }, 7000); // 7 seconds delay
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

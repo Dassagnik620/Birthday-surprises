@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthdayyyy 🎉</title>
+  <style>
+    body {
+      background: linear-gradient(to top left, #ffe6f0, #fff0f5);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #444;
+      text-align: center;
+      padding: 50px 20px;
+      overflow: hidden;
+    }
+
+    h2 {
+      font-size: 32px;
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+
+    .message {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      max-width: 700px;
+      margin: auto;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .heart {
+      animation: pulse 1.2s infinite;
+      color: red;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-style: italic;
+      color: #777;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 26px;
+      }
+
+      .message {
+        font-size: 16px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2><span class="heart">❤️</span> Happy Birthday To You! <span class="heart">❤️</span></h2>
+
+  <div class="message">
+    <p>
+      Wishing the most amazing, wonderful, and fabulous birthday to the most favorite person of mine! 🍰<br><br>
+      May your special day be filled with joy, laughter, and all the things that make you smile. 🎉🥳<br><br>
+      Another year around the sun, and you just keep getting better! Cheers to you on your birthday! 💖<br><br>
+      May this year bring you endless blessings and incredible adventures. ✨<br><br>
+      You deserve all the happiness in the world on your special day — sending lots of love! 🧁🎈<br><br>
+      You bring so much light and positivity into my life, and I’m grateful to have you in it. 🌟<br><br>
+      Enjoy a lot today! 💫🎁
+    </p>
+  </div>
+
+  <div class="footer">
+    — With love, Sagnik 💌
+  </div>
+
+  <!-- Confetti animation script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script>
+    window.onload = () => {
+      const duration = 5000;
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 40,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 }
+        });
+        confetti({
+          particleCount: 40,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 }
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+    };
+  </script>
+
+</body>
+</html>
